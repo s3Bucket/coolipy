@@ -1,6 +1,11 @@
+from ._client import CoolifySession
+
+
 class ProjectService:
-    def __init__(self, client_session):
-        self._client = client_session
+    def __init__(self, session: CoolifySession):
+        if not isinstance(session, CoolifySession):
+            raise TypeError(f"client_session must be CoolifySession, got {type(session).__name__}")
+        self._client = session
 
     def list_projects(self):
         return self._client.request("GET", "/api/v1/projects")
