@@ -1,5 +1,5 @@
 import requests
-from exceptions import CoolifyAPIError
+from coolipy.exceptions import CoolifyAPIError
 
 
 class CoolifyClient:
