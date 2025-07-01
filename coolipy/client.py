@@ -22,11 +22,11 @@ class CoolifyClient:
     def list_projects(self):
         return self._request("GET", "/api/v1/projects")
 
-#    def get_project(self, project_id):
-#        return self._request("GET", f"/api/v1/projects/{project_id}")
+    def get_project(self, project_id):
+        return self._request("GET", f"/api/v1/projects/{project_id}")
 
-#    def create_deployment(self, project_id, payload):
-#        return self._request("POST", f"/api/v1/projects/{project_id}/deployments", json=payload)
+    def create_project(self, payload):
+        return self._request("POST", f"/api/v1/projects", json=payload)
 
 #    def get_deployment_status(self, deployment_id):
 #        return self._request("GET", f"/api/v1/deployments/{deployment_id}")
