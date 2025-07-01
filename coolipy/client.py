@@ -22,8 +22,8 @@ class CoolifyClient:
     def list_projects(self):
         return self._request("GET", "/api/v1/projects")
 
-    def get_project(self, project_id):
-        return self._request("GET", f"/api/v1/projects/{project_id}")
+    def get_project(self, uuid):
+        return self._request("GET", f"/api/v1/projects/{uuid}")
 
     def create_project(self, payload):
         return self._request("POST", f"/api/v1/projects", json=payload)
