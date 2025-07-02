@@ -9,3 +9,6 @@ class ServiceService:
 
     def create_service(self, payload):
         return self._client.request("POST", f"/api/v1/services", json=payload)
+
+    def update_env(self, uuid, payload):
+        return self._client.request("PATCH", f"/api/v1/services/{uuid}", json=payload)
