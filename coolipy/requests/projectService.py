@@ -1,6 +1,5 @@
 from ._client import CoolifySession
 
-
 class ProjectService:
     def __init__(self, session: CoolifySession):
         if not isinstance(session, CoolifySession):
