@@ -3,4 +3,4 @@ from .projectService import ProjectService
 from .serviceService import ServiceService
 from .resourceService import ResourceService
 
-__all__ = ["CoolifySession", "ProjectService", "ServiceService", "ResourceService"]
+__all__ = ["CoolifySession"]
