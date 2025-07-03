@@ -9,14 +9,9 @@ class N8nService:
         self._serviceService = ServiceService(session)
         self._resourceService = ResourceService(session)
 
-    def foo(self):
-        print(self._projectService.list_projects())
-        response = self._resourceService.list_resources()
-
-        for r in response:
-            print(f"Name: {r['name']}, ID: {r['id']}")
-
+    def build_n8n(self):
         self._serviceService.create_service({
+            "name": "n8n-cli",
             "type": "n8n",
             "project_uuid": "fk844wwwsgc8wokowg4gk44g",
             "environment_name": "test",
@@ -24,6 +19,8 @@ class N8nService:
             "server_uuid": "ncskowskwwwkcok0k0wokc4g",
             "instant_deploy": False
         })
+
+        self._serviceService.list_services()
 
         self._serviceService.update_env(uuid="ks44ggkko080ow000og0wg4s", payload={
             "key": "SERVICE_URL_N8N",
