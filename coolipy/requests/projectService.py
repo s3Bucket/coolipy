@@ -16,7 +16,8 @@ class ProjectService:
         return list(filter(lambda x: x['name'] == name, self.list_projects()))
 
     def get_projects_environment_by_name(self, project_name, env_name):
-        return list(filter(lambda x: x['name'] == env_name, self.get_project_by_name(project_name)[0]['environments']))
+        return list(filter(lambda x: x['name'] == env_name,
+                           self.get_project(self.get_project_by_name(project_name)[0]['uuid'])['environments']))
 
     def create_project(self, payload):
         return self._client.request("POST", f"/api/v1/projects", json=payload)

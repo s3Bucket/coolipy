@@ -13,5 +13,6 @@ class UtilService:
 
         env = self._projectService.get_projects_environment_by_name(project_name, project_env_name)
 
-        for service in env:
-            self._serviceService.delete_service(service['uuid'])
+        for service in self._serviceService.list_services():
+            if service['environment_id'] == env['id']:
+                self._serviceService.delete_service(service['uuid'])
