@@ -11,7 +11,7 @@ class UtilService:
     def prune_services_from_environment(self, project_name,
                                         project_env_name):
 
-        env = self._projectService.get_projects_environment_by_name(project_name, project_env_name)
+        env = self._projectService.get_projects_environment_by_name(project_name, project_env_name)[0]
 
         for service in self._serviceService.list_services():
             if service['environment_id'] == env['id']:

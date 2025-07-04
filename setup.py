@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="coolipy",
-    version="0.4.12",
+    version="0.4.13",
     packages=find_packages(),
     install_requires=[
         "requests"
