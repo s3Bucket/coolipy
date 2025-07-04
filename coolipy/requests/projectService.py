@@ -15,6 +15,5 @@ class ProjectService:
     def get_project_by_name(self, name):
         return list(filter(lambda x: x['name'] == name, self.list_projects()))
 
-
     def create_project(self, payload):
         return self._client.request("POST", f"/api/v1/projects", json=payload)
