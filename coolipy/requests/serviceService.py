@@ -15,3 +15,6 @@ class ServiceService:
 
     def update_env(self, uuid, payload):
         return self._client.request("PATCH", f"/api/v1/services/{uuid}/envs", json=payload)
+
+    def delete_service(self, uuid):
+        return self._client.request("DELETE", f'/api/v1/services/{uuid}')
