@@ -1,5 +1,6 @@
 from ._client import CoolifySession
 
+
 class ProjectService:
     def __init__(self, session: CoolifySession):
         if not isinstance(session, CoolifySession):
@@ -11,6 +12,9 @@ class ProjectService:
 
     def get_project(self, uuid):
         return self._client.request("GET", f"/api/v1/projects/{uuid}")
+
+    def get_project_by_name(self, name):
+        return filter(lambda x: x['name'] == name, self.list_projects())
 
     def create_project(self, payload):
         return self._client.request("POST", f"/api/v1/projects", json=payload)
