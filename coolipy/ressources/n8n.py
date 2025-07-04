@@ -16,10 +16,12 @@ class N8nService:
                 'name': service_name
             })
 
+        print(self._projectService.get_project_by_name(project_name))
+
         self._serviceService.create_service({
             "name": "n8n-cli",
             "type": "n8n",
-            "project_uuid": self._projectService.get_project_by_name(project_name)[0]['uuid'],
+            "project_uuid": "",
             "environment_name": "test",
             "environment_uuid": "gowkokgks8woog88w8og44wc",
             "server_uuid": "ncskowskwwwkcok0k0wokc4g",
