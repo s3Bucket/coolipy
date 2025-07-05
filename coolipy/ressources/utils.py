@@ -8,7 +8,7 @@ class UtilService:
         self._projectService = ProjectService(session)
         self._serviceService = ServiceService(session)
 
-    def prune_services_from_environment(self, project_name,
+    def purge_services_from_environment_services_from_environment(self, project_name,
                                         project_env_name):
 
         env = self._projectService.get_projects_environment_by_name(project_name, project_env_name)[0]

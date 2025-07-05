@@ -22,17 +22,14 @@ class N8nService:
         else:
             project_uuid = existing_project[0]['uuid']
 
+        env_uuid = self._projectService.get_projects_environment_by_name(project_name, project_env_name)['uuid']
+
         self._serviceService.create_service({
-            "name": "n8n-cli",
+            "name": service_name,
             "type": "n8n",
             "project_uuid": project_uuid,
             "environment_name": project_env_name,
-            "environment_uuid": "gowkokgks8woog88w8og44wc",
+            "environment_uuid": env_uuid,
             "server_uuid": "ncskowskwwwkcok0k0wokc4g",
             "instant_deploy": False
-        })
-
-        self._serviceService.update_env(uuid="ks44ggkko080ow000og0wg4s", payload={
-            "key": "SERVICE_URL_N8N",
-            "value": "cli-n8n.agentsmithery.de"
         })
