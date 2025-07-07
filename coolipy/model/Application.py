@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from typing import List
 
 @dataclass
-class DeploymentConfig:
+class ApplicationConfig:
     project_uuid: str
     server_uuid: str
     environment_name: str
