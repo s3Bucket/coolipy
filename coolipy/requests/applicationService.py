@@ -1,3 +1,4 @@
+from coolipy.model.Application import DeploymentConfig
 from coolipy.requests import CoolifySession
 
 
@@ -10,7 +11,7 @@ class ApplicationService:
     def list_applications(self):
         return self._client.request("GET", "/api/v1/applications")
 
-    def create_application_public(self, payload):
+    def create_application_public(self, payload: DeploymentConfig):
         return self._client.request("POST", "/api/v1/applications", json=payload)
 
     def create_application_private_gh_app(self, payload):
